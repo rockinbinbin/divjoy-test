@@ -48,8 +48,12 @@ function useAuthProvider() {
   const handleAuth = async (user) => {
     // Create the user in the database
     // Auth0 doesn't indicate if they are new so we attempt to create user every time
-    await createUser(user.sub, { email: user.email });
-
+    console.log('user: ', user)
+    try {
+      await createUser(user.sub, { email: user.email })
+    } catch (error) {
+      console.log('error: ', error)
+    }
     // Update user in state
     setUser(user);
     return user;
