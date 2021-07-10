@@ -1,4 +1,5 @@
 import React from "react";
+import "styles/global.scss"; // Bulma TODO: remove
 import "styles/globals.css"; // Tailwind
 import "styles/components/index.scss";
 import Navbar from "components/Navbar";
